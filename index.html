@@ -16,10 +16,10 @@
             margin: auto;
             /* margin-top: 15vh; */
             background: cadetblue;
-            border: 4px solid red;
             justify-content: center;
             align-items: flex-start;
             padding-top: 20px;
+            padding-left: 20px;
         }
 
         #layout:hover {
@@ -28,7 +28,6 @@
 
         #layout1,
         main {
-            border: 5px dashed yellow;
             flex-basis: 250px;
             box-sizing: border-box;
         }
@@ -37,18 +36,21 @@
             max-width: 270px;
         }
 
-        form [type="submit"] {
+        form[type="submit"] {
             margin: auto;
             display: block;
         }
 
-        footer {
-            border: 10px solid blue;
+        input[type="image"] {
+            max-width: 100%;
+        }
+
+        /* footer {
             background: gold;
             height: 300px;
             padding: 50px;
             width: 500px;
-        }
+        } */
 
         @media (max-width: 500px) {
             #layout {
@@ -108,7 +110,7 @@
                 <input type="search" id="gsearch" name="gsearch">
                 <input type="submit" value="Submit">
             </form> -->
-            <input type="tel"><br><br>
+            <input type="tel"><br>
             <input type="search">
         </main>
     </div>
