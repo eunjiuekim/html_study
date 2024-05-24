@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라인컴퓨터아트학원</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #layout01 {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header {
+            background: skyblue;
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        header:hover {
+            background: tomato;
+        }
+
+        h1 {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        nav ul {
+            display: flex;
+            padding-left: 0;
+            max-width: 700px;
+            margin: auto;
+            padding: 50px 0;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            /*list-style-position: inside; */
+        }
+
+        nav li {
+            /* flex: 1;*/
+            flex-basis: 140px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            font-family: "Gowun Dodum", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        nav li:hover {
+            transform: scale(1.5);
+        }
+
+        #layout02 {
+            display: flex;
+        }
+
+        main {
+            flex: 2.5;
+        }
+
+        main section {
+            background: aqua;
+            padding: 20px;
+        }
+
+        main section p {
+            font-family: "Gowun Dodum", sans-serif;
+        }
+
+        main article {
+            background: gold;
+            padding: 20px;
+        }
+
+        main article p {
+            font-family: "Nanum Pen Script", cursive;
+        }
+
+        aside {
+            flex: 1;
+            background: #ddd;
+            transition: 0.5s;
+            padding: 20px;
+        }
+
+        aside:hover {
+            background: linear-gradient(tomato, gold);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-family: "Nanum Pen Script", cursive;
+            background: linear-gradient(orange, yellow);
+        }
+
+        footer:hover {
+            background: linear-gradient(yellow, orange);
+        }
+
+        /* 작은 기계장치에 대한 설정 (최대 넓이: 550픽셀) */
+        @media (max-width: 550px) {
+            #layout02 {
+                flex-direction: column;
+            }
+
+            /*  
+            nav li:nth-child(4),
+            nav li:nth-child(5) {
+              display: none; 
+            }*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout01">
+        <header>
+            <h1>마크업 첫걸음</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <div id="layout02">
+            <main>
+                <section>
+                    <h2>정보구역-1</h2>
+                    <p>선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다. 국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약,
+                        우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다.
+                    </p>
+                    <p>대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할
+                        수 있다.</p>
+                </section>
+                <article>
+                    <h2>정보구역-2</h2>
+                    <p>모든 국민은 그 보호하는 자녀에게 적어도 초등교육과 법률이 정하는 교육을 받게 할 의무를 진다. 법원은 최고법원인 대법원과 각급법원으로 조직된다. 재판의 전심절차로서
+                        행정심판을 할 수 있다. 행정심판의 절차는 법률로 정하되, 사법절차가 준용되어야 한다. 학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한
+                        기본적인 사항은 법률로 정한다.</p>
+                </article>
+            </main>
+            <aside>
+                <h3>부가정보</h3>
+                <p>국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금
+                    출석·답변하게 할 수 있다. 국회가 재적의원 과반수의 찬성으로 계엄의 해제를 요구한 때에는 대통령은 이를 해제하여야 한다.</p>
+            </aside>
+        </div>
+        <footer>하단구역</footer>
+    </div>
+</body>
+
+</html>
