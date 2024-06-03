@@ -59,13 +59,26 @@
 
         article {
             background-color: #ccc;
-            padding: 80px;
+            padding: 10px;
+        }
+
+        article b {
+            text-transform: lowercase;
+            letter-spacing: -1px;
+            text-indent: 15px;
         }
 
         aside {
             background-color: cornsilk;
-            padding: 50px;
+            padding: 10px;
             margin-top: 20px;
+            overflow-y: auto;
+            height: 200px;
+        }
+
+        aside p{
+            text-indent: 15px;
+            text-align: justify
         }
 
         section {
@@ -76,7 +89,7 @@
             margin-right: 20px;
         }
 
-        section ul{
+        section ul {
             text-align: left;
             border: 2px solid gray;
             list-style-position: inside;
@@ -101,14 +114,18 @@
             max-width: 500px;
         }
 
-        audio{
+        audio {
             width: 100%;
         }
 
-        video{
+        video {
             max-width: 100%;
             border: 2px solid red;
+            position: fixed;
+
+            left: -2000px;
         }
+
         /* 0~530픽셀 넓이에서 디자인 적용됨 */
         @media (max-width: 530px) {
             header {
@@ -159,6 +176,7 @@
                 <video controls>
                     <source src="media/movie.mp4" type="video/mp4">
                 </video>
+                <p>라인컴퓨터아트학원</p>
             </section>
             <section>
                 <h2>콘텐츠 그룹02</h2>
@@ -168,13 +186,23 @@
                 <video controls height="400">
                     <source src="media/sea.mp4" type="video/mp4">
                 </video>
+                <p>라인컴퓨터아트학원</p>
             </section>
             <div id="right">
                 <article>
                     <h2>주요기사</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum aliquam fermentum.
+                        <b>WHATEVER YOU THINK ABOUT IS NOT REAL </b> varius velit egestas placerat. Suspendisse mattis
+                        vestibulum quam eu ultricies.</p>
                 </article>
                 <aside>
                     <h3>광고</h3>
+                    <p>법률은 특별한 규정이 없는 한 공포한 날로부터 20일을 경과함으로써 효력을 발생한다. 헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에
+                        관한 규칙을 제정할 수 있다.
+
+                        국회는 국민의 보통·평등·직접·비밀선거에 의하여 선출된 국회의원으로 구성한다. 모든 국민은 보건에 관하여 국가의 보호를 받는다. 대통령은 내우·외환·천재·지변 또는 중대한
+                        재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한
+                        재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다.</p>
                 </aside>
             </div>
         </main>
@@ -184,17 +212,17 @@
         </footer>
     </div>
     <script>
-          const $h2 = document.querySelector("main section:first-child h2");
-          $h2.innerHTML += "<br><b style='font-size: 1.2rem; color: red;'>태그가 추가됨</b>";
-  
-          const $p = document.createElement("p");
-          $h2.after($p);
-          $p.innerHTML="형제요소가 추가됨";
-        
-          const $div = document.createElement("div");
-          $div.innerHTML="형제요소가 추가됨";
-          const $hsecond = document.querySelector("main section:last-of-type h2");
-          $hsecond.before($div);
+        const $h2 = document.querySelector("main section:first-child h2");
+        $h2.innerHTML += "<br><b style='font-size: 1.2rem; color: red;'>태그가 추가됨</b>";
+
+        const $p = document.createElement("p");
+        $h2.after($p);
+        $p.innerHTML = "형제요소가 추가됨";
+
+        const $div = document.createElement("div");
+        $div.innerHTML = "형제요소가 추가됨";
+        const $hsecond = document.querySelector("main section:last-of-type h2");
+        $hsecond.before($div);
 
         // const $h2 = document.querySelector("section:last-of-type h2");
         // const $div = document.createElement("div");
@@ -203,7 +231,7 @@
 
         const $pp = document.querySelector("section p");
         const $ul = document.createElement("ul");
-        
+
         $ul.innerHTML = "<li>딸기</li><li>바나나</li><li>파인애플</li>";
         $pp.after($ul);
 

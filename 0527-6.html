@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>자바스크립트로 배열객체 연습하기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            margin-top:20px;
+        }
+        section {
+            max-width: 900px;
+            border: 2px dashed red;
+            margin: auto;
+            display: flex;
+            border-radius: 30px;
+            /* transform: rotate(-20deg); */
+            overflow: hidden;
+            box-shadow: -3px -3px 10px red;
+            transition: 0.5s;
+            align-items: center;
+        }
+/* 
+        section:hover {
+            transform: rotate(0);
+            cursor: pointer;
+        } */
+
+        h1 {
+            font-family: "Jua", sans-serif;
+            flex: 1;
+            background: antiquewhite;
+            padding: 30px;
+        }
+
+        ol {
+            padding: 20px;
+            flex: 2;
+            background-color: azure;
+            list-style-position: inside;
+
+        }
+        p{
+            flex: 1;
+            background-color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <h1>반응형 웹퍼블리싱 학습 순서</h1>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>javascript</li>
+            <li>jquery</li>
+            <li>exercise</li>
+        </ol>
+        <p>1111111111</p>
+        <p>1111111111</p>
+        <p>1111111111</p>
+    </section>
+    <script>
+       const myFruits = ["딸기", "바나나", "포도","참외", "수박"];
+    //    console.log(myFruits);
+    //    console.log(typeof myFruits);
+    //    console.log("오늘은 귀가길에 " + myFruits[1] + "를(을) 살것이다.");
+       document.querySelectorAll("p")[1].innerHTML = myFruits;
+       document.querySelector("p:nth-of-type(3)").innerHTML = myFruits[4];
+
+       // 배열연습 (로또 추천 번호 생성)
+       let lotto = [35, 44, 45, 13, 7, 22];
+       console.log(typeof lotto);
+       document.querySelector("p:first-of-type").innerHTML = lotto[3];
+    </script>
+</body>
+
+</html>
