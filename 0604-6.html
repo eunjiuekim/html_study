@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch 문</title>
+</head>
+
+<body>
+    <h3>이곳에 학점이 표시되게 하세요.</h3>
+    <script>
+        let subject = prompt("과목을 입력하시오","");
+        subject = subject.toLowerCase();
+        switch(subject){
+            case "html":
+                subject += '은 1학점입니다.';
+                break;
+            case "css": 
+                subject += '는 1학점입니다.';
+                break;
+            case 'javascript':
+                subject += '는 3학점입니다.';
+                break;
+            default:
+                subject = "해당과목이없습니다."
+        }
+        document.querySelector("h3").innerHTML = subject;
+    </script>
+</body>
+
+</html>

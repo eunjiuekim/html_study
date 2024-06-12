@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습</title>
+</head>
+
+<body>
+    <p></p>
+    <aside></aside>
+    <script>
+       /* const fruit = prompt("오늘은 딸기 사과 수박이 준비되었습니다. 무엇을 드릴까요?");
+        let print = "꺼져";
+        if(fruit == "딸기"){
+            print = "2500원 결제를 도와드리겠습니다";
+        }else if(fruit == "사과"){
+            print = "3000원 결제를 도와드리겠습니다";
+        }else if(fruit == "수박"){
+            print = "3500원 결제를 도와드리겠습니다";
+        }
+        document.querySelector("p").innerHTML = print;*/
+        const order = prompt("현재 얼마 있습니까? ","");
+        let print ="정확한 금액을 넣어라";
+        if(order <= 2000){
+            print = "딸기 드릴게요"
+        }else if(2000 < order &&  order < 3000){
+            print = "포도 드릴게요"
+        }else if(4000 > order || 3000 >= order){
+            print = "수박 드릴게요"
+        }else if(order >= 4000){
+            print = "이거 다 드릴게요"
+        }
+        document.querySelector("aside").innerHTML = print;
+    </script>
+</body>
+
+</html>
