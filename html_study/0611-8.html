@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true false를 사용한 공 이동하기</title>
+    <style>
+        p {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-image: radial-gradient(aliceblue, skyblue);
+            position: relative;
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-image: radial-gradient(#fff, #ddd);
+            position: fixed;
+            left: calc((100% - 100px) /2);
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div></div>
+    <script>
+        const $p = document.querySelector("p");
+        const $div = document.querySelector("div");
+        setInterval(() => move(), 10);
+        let i = 10;
+        let j = true;
+        let sp = 5;
+        let h1 = 10;
+        let h2 = true;
+        move = () => {
+            if (j) {
+                i += sp;
+                if (i >= window.innerWidth - $p.offsetWidth -10) j = false;
+            } else {
+                i -= sp;
+                if(i <= 0) j = true;
+            }
+            $p.style.left = i + "px";   
+            
+            if(h2){
+                h1 += sp;
+                if(h1 >= window.innerHeight - $div.offsetHeight) h2=false;
+            } else{
+                h1 -= sp;
+                if(h1 <=0) h2=true;
+            }
+            
+            $div.style.top = h1 + "px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+    <style>
+        form {
+            max-width: 300px;
+        }
+
+        fieldset {
+            border: 2px dashed red;
+            border-radius: 20px;
+            box-shadow: 1px 1px 3px black;
+            padding: 0 30px 10px;
+        }
+
+        legend {
+            background-color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        input {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>로그인</legend>
+            <p>ID : <input type="text" required></p>
+            <p>PW : <input type="password" required></p>
+            <p><button>확인</button></p>
+        </fieldset>
+    </form>
+    <footer>
+        11111111111
+    </footer>
+    <script>
+        const x = document.querySelector("input");
+        const ok = document.querySelector("button");
+        ok.addEventListener("click", (e)=>{
+            e.preventDefault();
+            document.querySelector("footer").innerHTML = x.value + document.querySelector("input[type='password']").value;
+    
+        });
+        function vv() {
+            // alert(x.value);
+               }
+    </script>
+</body>
+
+</html>

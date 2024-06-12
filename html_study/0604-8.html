@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form과 switch문</title>
+    <style>
+        body{
+            background-image: url("images/dog.png"), url("images/flower.png");
+            background-repeat: repeat-x, repeat-y;
+            background-attachment: fixed, scroll;
+            background-position: center center, center top;
+            height: 200vh;
+            width: 200vw;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="get">
+        <label for="fruit">과일: </label>
+        <input type="text" id="fruit">
+        <button>확인하기</button>
+    </form>
+    <p>결과가 표시되는 곳</p>
+    <script>
+        const $fruit = document.querySelector('#fruit');
+        const $btn = document.querySelector("button");
+        let result;
+        $btn.addEventListener("click", ()=> test($fruit.value));
+        test = (fruit) =>{
+            switch(fruit){
+                case "사과":
+                    result = "사과는 2000원입니다."
+                    break;
+                case "딸기":
+                    result = "딸기는 2500원입니다."
+                    break;
+                case "바나나":
+                    result = "바나나는 1500원입니다."
+                    break;
+                default:
+                    result = "품절입니다";
+            }
+            document.querySelector("p").innerHTML = result;
+
+        }
+    //    let x = document.querySelector("#fruit");
+    //    const y = document.querySelector("button");
+    //    y.addEventListener("click", ()=> zz());
+    //    zz = () => {
+    //         let xx = x.value;
+    //         // alert(x);
+         
+    //         if (xx >= 60){
+    //             xx = "통과했습니다";
+    //         }else{
+    //             xx = "여름방학에 재수강 하세요"; 
+    //         }
+    //         documenet.querySelector("p").innerHTML = xx;
+    //    }
+       
+    </script>
+</body>
+
+</html>
