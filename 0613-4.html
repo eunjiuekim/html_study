@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>봄 여름 가을 겨울</title>
+    <style>
+        #season {
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        button {
+            background: linear-gradient(#eee, white);
+            padding: 3px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        button:hover {
+            background: linear-gradient(white, #eee);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="season">
+        <button type="button">봄</button>
+        <button type="button">여름</button>
+        <button type="button">가을</button>
+        <button type="button">겨울</button>
+        <button type="button">모두 보이기</button><br><br>
+        <div></div>
+    </section>
+
+    <script>
+        const $season = document.querySelector('#season div:last-child');
+        $buttons = document.querySelectorAll('button');
+        const images = ["images/spring.png", "images/summer.png", "images/autumn.png", "images/winter.png"];
+        /*  images.forEach((item, index)=>{
+              $button[index].addEventListener('click', (item)=>{
+                  $season.innerHTML = `<img src=${item} alt = 'season'>`
+              });
+          })*/
+        images.forEach(item => {
+            $season.innerHTML += `<img src=${item} alt = 'season'>`;
+        })
+        const $imgs = document.querySelectorAll("img");
+        $buttons.forEach((item, index) => {
+            $buttons[index].addEventListener('click', () => {
+                if (index < 4) {
+                    $imgs.forEach(img => img.style.display = 'none');
+                    $imgs[index].style.display = "inline";
+                } else {
+                    $imgs.forEach(img => img.style.display = 'inline');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

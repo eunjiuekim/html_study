@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체속성 업데이트</title>
+</head>
+<body>
+    <h1>객체속성 업데이트</h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+        let iu = {
+            name:"아이유",
+            addr: "분당",
+            hair: "검정색"
+        }
+
+    
+        let bp = {
+            name: "블랙핑크",
+            eye: "갈색",
+            fri: "갈치"
+        }
+
+        let uuu = {...iu, ...bp};
+        //구조분해 할당 destructuring assingment
+        let {name, addr, hair} = uuu;
+        // name이 덮어쓰기 된다
+
+    </script>
+</body>
+</html>

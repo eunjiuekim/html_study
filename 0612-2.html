@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전구 불 켜고 끄기</title>
+    <title>강아지 선택하기</title>
+    <style>
+        h1,
+        #bulb {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: bisque;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>전구 불 켜고 끄기</h1>
+    <h1>강아지 선택하기</h1>
     <section id="bulb">
-        <h2>전구</h2>
-        <button type="button" onclick="document.querySelector('img').src='images/retriever.jpg'">리트리버</button>
-        <img src="images/off.gif" alt="전구">
-        <button type="button" onclick="document.querySelector('img').src='images/poodle.jpg'; document.querySelector('img').width=300">푸들</button>
+        <h2>강아지</h2>
+        <button type="button">리트리버</button>
+        <img src="images/retriever.jpg" alt="리트리버" width="300">
+        <button type="button">푸들</button>
     </section>
+    <script>
+        const $img = document.querySelector("img");
+        const $btn = document.querySelectorAll("button");
+
+        $btn[0].addEventListener('click', () => $img.setAttribute('src', "images/retriever.jpg"));
+        $btn[1].addEventListener('click', () => $img.setAttribute('src', "images/poodle.jpg"));
+
+    </script>
 </body>
+
 </html>

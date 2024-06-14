@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 차례대로 나타내기</title>
+    <style>
+        #layout {
+            width: 600px;
+            height: 800px;
+            margin: auto;
+            border-top: 10px solid red;
+            border-bottom: 10px solid red;
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            width: 600px;
+            height: 800px;
+            opacity: 0;
+            transition: 1s;
+            position: absolute;
+
+            top: 0;
+            left: 0;
+        }
+
+        .show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="layout">
+        <h1></h1>
+        <div>
+            <img src="images/5.jpg" alt="5">
+            <img src="images/4.jpg" alt="4">
+            <img src="images/3.jpg" alt="3">
+            <img src="images/2.jpg" alt="2">
+            <img src="images/1.jpg" alt="1">
+        </div>
+
+    </section>
+    <h2></h2>
+    <script>
+        const $imgs = document.querySelectorAll('img');
+        let currentIndex = 0;
+        setInterval(() => {
+            $imgs[currentIndex].classList.remove('show');
+            currentIndex = (currentIndex + 1) % $imgs.length;
+            $imgs[currentIndex].classList.add('show');
+        }, 1500);
+
+        const $h2 = document.querySelector("h2");
+        let c = 1;
+        setInterval(() => {
+            $h2.innerHTML += c + " ";
+            c = (c + 1) % 7;
+            if (c === 0) {
+                $h2.innerHTML = "";
+                c = 1;
+            }
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>

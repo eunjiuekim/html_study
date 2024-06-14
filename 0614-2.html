@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계절꽃 선택하기</title>
+    <style>
+        #layout{
+            max-width: 650px;
+            margin: auto;
+            border: 5px dashed yellowgreen;
+        }
+        #flower img{
+            width: 300px;
+            margin: 10px;
+        }
+        h2{
+            width: 300px;
+            background-color: aliceblue;
+            margin: auto;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div>
+            <button type="button">봄</button>
+            <button type="button">여름</button>
+            <button type="button">가을</button>
+            <button type="button">겨울</button>
+        </div>
+        <section id="flower">
+            <h2>계절별 꽃들</h2>
+        </section>
+    </div>
+    <script>
+        const $flower = document.querySelector("#flower");
+
+        const imgs = ['images/spring.png', 'images/summer.png', 'images/autumn.png', 'images/winter.png'];
+        
+        imgs.forEach(i =>{
+            $flower.innerHTML += `<img src =${i} alt = 'season'>`;
+        });
+
+        const $imgs = document.querySelectorAll("img");
+        const $btns = document.querySelectorAll("button");
+
+        $btns.forEach((i,j)=>{
+            i.addEventListener('click',()=>{
+                $imgs.forEach((x,y)=>{
+                    if(j == y) {
+                        x.style.display="inline";
+                        x.classList.add('big');
+                    }else if(j==4){
+                        x.style.display="inline";
+                    }else {
+                        x.style.display = "none";
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

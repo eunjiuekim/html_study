@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값 입력받아서 계산하기</title>
+</head>
+
+<body>
+    <h1>계산하기</h1>
+    <form action="#" method="get">
+        <label for="unit">단가</label>
+        <input type="number" id="unit" maxlength="5">
+        *
+        <label for="count">갯수</label>
+        <input type="number" id="count" maxlength="3">
+        =
+        <input type="number" id="result" readonly>
+    </form>
+
+</body>
+<script>
+    const $inputs = document.querySelectorAll("input");
+
+    $inputs.forEach(input =>{
+        input.addEventListener('input', ()=>{
+            if(input.value.length >5 && input.id==="unit"){
+                alert("숫자는 5자리를 초과할 수 없습니다");
+                input.value='';
+            }else if(input.value.length > 3 && input.id==="count"){
+                alert("숫자는 3자리를 초과할 수 없습니다");
+                input.value='';
+            }
+        });
+    });
+
+    $inputs[1].addEventListener('keyup', e => calculate(e));
+    const calculate = e => {
+        if (e.keyCode === 13){
+            $input[2].value = $input[0].value * $input[1].value;            
+        }
+    }
+</script>
+
+</html>
